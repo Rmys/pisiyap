@@ -1,0 +1,26 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+#
+# This program is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free
+# Software Foundation; either version 3 of the License, or (at your option)
+# any later version.
+#
+# Please read the docs/COPYING file.
+#
+
+from PyQt5.QtWidgets import QApplication
+from PyQt5.QtCore import QLocale, QTranslator
+from libpisiyap.pisiyap import PisiYap
+import sys
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    locale = QLocale.system().name()
+    translator = QTranslator(app)
+    translator.load("/usr/share/pisiyap/languages/%s.qm"%locale)
+    app.installTranslator(translator)
+    PisiYap = PisiYap()
+    PisiYap.show()
+    sys.exit(app.exec_())
