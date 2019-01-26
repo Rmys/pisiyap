@@ -143,6 +143,9 @@ class PisiYap(QMainWindow):
         elif filename.endswith('rar'):
             archivetype = 'rar'
             extension = '.rar'
+        elif filename.endswith('xz'):
+           archivetype = 'tarxz'
+           extension = '.tar.xz'
         else:
             archivetype = 'binary'
             extension = False
