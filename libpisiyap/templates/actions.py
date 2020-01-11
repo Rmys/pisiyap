@@ -185,21 +185,18 @@ mesonTools = u'''#!/usr/bin/env python
 from pisi.actionsapi import autotools
 from pisi.actionsapi import pisitools
 from pisi.actionsapi import shelltools
+from pisi.actionsapi import mesontools
 from pisi.actionsapi import get
 
 def setup():
-    shelltools.makedirs("build")
-    shelltools.cd("build")
-    shelltools.system("meson .. --prefix=/usr")
+    mesontools.configure()
 
 def build():
-    shelltools.cd("build")
-    shelltools.system("ninja")
+    mesontools.build()
 
 def install():
-    shelltools.cd("build")
-    shelltools.system("DESTDIR=%s ninja install" % get.installDIR())
+     mesontools.install()
     
-    shelltools.cd("..")
+    #shelltools.cd("..")
     pisitools.dodoc("AUTHORS", "BUGS", "ChangeLog", "COPYING", "NEWS", "README")
 '''
