@@ -195,7 +195,7 @@ def build():
     mesontools.build()
 
 def install():
-     mesontools.install()
+    mesontools.install()
     
     #shelltools.cd("..")
     pisitools.dodoc("AUTHORS", "BUGS", "ChangeLog", "COPYING", "NEWS", "README")
