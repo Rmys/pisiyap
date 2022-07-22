@@ -22,6 +22,7 @@ pspecXml = u'''<?xml version="1.0" ?>
         <License>%(license)s</License>%(icon)s
         <IsA>%(isA)s</IsA>
         <Summary>%(summary)s</Summary>
+        <Icon>%(packageName)s</Icon>
         <Description>%(description)s</Description>
         <Archive sha1sum="%(sha1Sum)s" type="%(archiveType)s">%(archiveAddr)s</Archive>
         <!--
